@@ -12,7 +12,7 @@
 
     <h1> Hello World</h1>
 
-    {% if availables.count > 0 %}
+    {% if availables %}
     {% for item in availables %}
     <div>{{item.Table_name}}</div>
 <div class="available"><div id="tbl_{{item.id}}" class="numSeats" onclick="showSeats({{item.id}})"> {{ item.Available_count }} tables available </div></div
