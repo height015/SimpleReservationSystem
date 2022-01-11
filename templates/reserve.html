@@ -1,0 +1,22 @@
+
+
+
+
+you just reserve {{table_number}} seat(s) at table {{table_id}} <br>
+you only have 3 minutes to finish or your reservation expires and the seats open up to another person<br>  
+
+
+<form method="post" action='#' id="confirm_form" onSubmit="return false;">
+
+<input type="hidden" name="tabl_num" id="tabl_num" value="{{table_id}}">
+<input type="hidden" name="num_seats" id="num_seats" value="{{table_number}}">
+<input type="hidden" name="reserveId" id="reserveId" value="{{reserved_Id}}">
+
+<input type="text" name="person_name" id="person_name">
+<input type="text" name="person_email" id="person_email">
+
+<button id="save" onclick="ConfirmSeats()">Buy Seats</button>
+
+<button  id="cancel" name="cancel" onclick="cancelReserve({{reserved_Id}})">Cancel</button>
+
+</form>

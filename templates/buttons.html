@@ -1,0 +1,23 @@
+
+
+
+{% if cities.count > 0 %}
+
+{{cities.Table_name}} now has {{cities.Available_count}} seat(s) available - ${{cities.Price}} per seats<br>
+click number of seats you want to reserve, will be held for 3 minutes once you click<br>  
+
+{% comment %} {% with b|center:cities.Available_count as range %} {% endcomment %}
+
+{% for i in 'x'|rjust:cities.Available_count %}
+
+{% comment %} {% for i in range %} {% endcomment %}
+{% comment %} onclick="showSeats("tbl_{{cities.id}}{{forloop.counter}}")" {% endcomment %}
+<button onclick="reserveSeats([{{cities.id}},{{forloop.counter}}])">{{forloop.counter}}</button>
+{% comment %} <button id="tbl_{{cities.id}}_{{forloop.counter}}">{{forloop.counter}}</button> {% endcomment %}
+
+{% endfor %}
+
+{% else %}
+<div> seats are no longer available for this table</div>
+
+{% endif %}

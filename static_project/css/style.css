@@ -1,0 +1,36 @@
+#wrapper{
+    width: 900px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#banner{
+    /* background-image:url(static/images/banner.png); */
+    background-image:url("../images/banner.png");
+    background-repeat: none;
+    height: 200px;
+    width: 600px;
+}
+.available{
+    background-image: url(../images/seats.png);
+    background-repeat: none;
+    float: left;
+    height: 300px;
+    width: 300px;
+}
+.full{
+    background-image:url(../images/seats_full.png);
+    background-repeat: none;
+    float: left;
+    height: 300px;
+    width: 300px;
+
+}
+.clear{
+    clear: both;
+}
+.numSeats{
+    color: #03F;
+    margin: 120px;
+    height: 30px;
+    width: 70px;
+}

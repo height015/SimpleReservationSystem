@@ -13,9 +13,27 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.contrib import admin
-from django.urls import path
-
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import path, include
+from reservation.views import home, load, process, cancel_process,reservation_confirm
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('', home, name="home"),
+    path('__debug__/', include('debug_toolbar.urls')),
+
+    # AJAX
+    path('ajax/', load, name='ajax_load'),  
+    path('revinit/', process, name='ajax_load2'),  
+    path('cancelrev/', cancel_process, name='ajax_cancel'), 
+    path('confirmrev/', reservation_confirm, name='ajax_confirm'),  
+
 ]
+
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_URL)
+

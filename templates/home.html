@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+<div id="wrapper">
+    <div id="banner"></div>
+    <div id="seats">
+
+
+    <h1> Hello World</h1>
+
+    {% if availables.count > 0 %}
+    {% for item in availables %}
+    <div>{{item.Table_name}}</div>
+<div class="available"><div id="tbl_{{item.id}}" class="numSeats" onclick="showSeats({{item.id}})"> {{ item.Available_count }} tables available </div></div
+
+    </div>
+
+
+{% endfor %}
+<div class="clear"> </div>
+<div id= "returnData">Click Available Tables To Get Seats </div>
+
+
+{% else %}
+<div class="full"><div class="numSeats"> 0 tables available </div></div>
+
+{% endif %}
+
+
+{% endblock %}
+   
+
+
+    
+
+</div>
+
